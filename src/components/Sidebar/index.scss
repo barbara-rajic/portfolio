@@ -1,0 +1,51 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.side-bar {
+  background: $background-color;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 89;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+
+  .container {
+    height: 100%;
+  }
+
+  nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 7px 0;
+        display: block;
+        text-align: center;
+
+        .nav-link {
+          color: $secondary-color;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 700;
+
+          font-size: 2.4rem;
+          margin-bottom: 4rem;
+          @include screen(lg) {
+            margin-bottom: 4rem;
+            margin-bottom: 5.6rem;
+          }
+        }
+      }
+    }
+  }
+}

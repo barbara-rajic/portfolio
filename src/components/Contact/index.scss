@@ -1,0 +1,104 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.contact {
+  &__form-container {
+    box-shadow: $commonBoxShadow;
+    background: $primary-color;
+    padding: 3rem;
+    text-align: right;
+    border-radius: $commonBorderRadius;
+    margin: 0 auto 5rem auto;
+    position: relative;
+
+    @include screen(lg) {
+      padding: 4rem;
+      width: 70%;
+    }
+
+    .user-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #666;
+      background: $primary-color;
+      border-radius: $commonBorderRadius;
+      box-shadow: $commonBoxShadow;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      line-height: 2em;
+      font-weight: 700;
+      padding: 8rem 1rem;
+      text-align: center;
+    }
+
+    .error {
+      color: $gradient2;
+      border: 1px solid $gradient2 !important;
+      background-color: lighten($gradient2, 40%);
+    }
+  }
+  &__form-field {
+    margin-bottom: 3rem;
+    @include screen(lg) {
+      margin-bottom: 4rem;
+    }
+
+    .error-message {
+      color: $gradient2;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      text-align: left;
+      font-weight: 700;
+      display: block;
+    }
+
+    .is-invalid {
+      border-color: $gradient2;
+      background-color: lighten($gradient2, 40%);
+      &:focus {
+        border-color: darken($gradient2, 10%);
+      }
+    }
+  }
+  &__form-label {
+    color: #666;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: left;
+  }
+  &__form-input {
+    color: #333;
+    background: $offWhite;
+    padding: 2rem;
+    width: 100%;
+    border: 1px solid rgb(235, 235, 235);
+    font-size: 1.6rem;
+    letter-spacing: 0px;
+    border-radius: $commonBorderRadius;
+    font-weight: 600;
+
+    &::placeholder,
+    &::-webkit-input-placeholder,
+    &:-ms-input-placeholder,
+    &::-ms-input-placeholder,
+    &:-moz-placeholder,
+    &::-moz-placeholder {
+      color: #999;
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+  }
+  &__form-btn-wrapper {
+    text-align: center;
+
+    button {
+      cursor: pointer;
+      background: $gradient1 !important;
+    }
+  }
+}

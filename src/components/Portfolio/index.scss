@@ -1,0 +1,105 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+$radius: 1rem;
+
+#portfolio {
+  .portfolio__content-container {
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+
+    .portfolio__content-wrapper {
+      padding: 0.5rem;
+      margin-bottom: 2rem;
+      box-shadow: $circleBoxShadow;
+      border-radius: $radius;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: space-around;
+      gap: 20px;
+      width: 100%;
+
+      @include screen(md) {
+        padding: 2rem;
+      }
+
+      @include screen(lg) {
+        flex-wrap: nowrap;
+        width: 90%;
+        margin-bottom: 5rem;
+      }
+
+      @include gradient-bg($orangeShadow, $greyShadow, $yellowShadow);
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .portfolio__content-polaroid {
+        background: $primary-color;
+        padding: 0.5rem;
+        border-radius: $radius;
+
+        @include screen(md) {
+          padding: 1.5rem;
+        }
+
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        text-align: center;
+      }
+
+      .portfolio__content-img {
+        position: relative;
+        height: 100%;
+        padding: 0.2rem;
+        border-radius: $radius;
+
+        img {
+          width: 100%;
+          height: 100%;
+          box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+          border-radius: $radius;
+          filter: grayscale(70%);
+          transition: filter 0.5s ease;
+        }
+
+        &:hover img {
+          filter: grayscale(0);
+        }
+      }
+
+      .portfolio__content-details {
+        padding: 2rem;
+        border-radius: $radius;
+        width: 100%;
+
+        .portfolio__content-text-wrapper {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+
+          .text-secondary {
+            color: $primary-color;
+          }
+
+          h3 {
+            font-size: 1.8rem;
+
+            @include screen(sm) {
+              font-size: 2.3rem;
+            }
+
+            a {
+              color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}

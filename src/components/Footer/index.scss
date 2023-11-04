@@ -1,0 +1,23 @@
+@import '/src/styles/variables';
+
+.footer {
+  background: $offWhite;
+  box-shadow: $commonBoxShadow;
+  padding: 2.5rem;
+  
+  .footer__content-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 2em;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+    color: $gradient1;
+
+    a {
+      color: inherit;
+    }
+  }
+}

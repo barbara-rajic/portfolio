@@ -1,0 +1,30 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.header {
+  box-shadow: $commonBoxShadow;
+  margin-bottom: 5rem;
+
+  .header-content {
+    position: relative;
+    z-index: 99;
+    text-align: left;
+    background: $gradient1;
+  }
+
+  .menu-link {
+    display: inline-block;
+    cursor: pointer;
+    margin: 2rem;
+    color: $primary-color;
+    transition: color 0.3s;
+
+    @include screen(md) {
+      margin-left: 8rem;
+    }
+  }
+
+  .menu-link:hover {
+    color: $gradient3;
+  }
+}

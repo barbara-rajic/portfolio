@@ -1,0 +1,44 @@
+$gradient1: #6b7a8f;
+$gradient2: #f7882f;
+$gradient3: #f7c331;
+
+$offWhite: #f2f2f2;
+$primary-color: lighten($offWhite, 10%);
+$secondary-color: darken($gradient1, 30%);
+
+$background-color: lighten($primary-color, 10%);
+
+$gutter: 15px;
+
+$commonBorderRadius: 5px;
+$commonBoxShadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+  rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+$circleBoxShadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+
+$greyShadow: rgba($gradient1, 0.9);
+$orangeShadow: rgba($gradient2, 0.9);
+$yellowShadow: rgba($gradient3, 0.9);
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 991px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// @font-face {
+//   font-family: Inter;
+//   src: url(/src/assets/static/Inter-Thin.ttf) format('ttf');
+//   font-weight: 100;
+// }
+// @font-face {
+//   font-family: Inter;
+//   src: url(/src/assets/static/Inter-Regular.ttf) format('ttf');
+//   font-weight: 400;
+// }
+// @font-face {
+//   font-family: Inter;
+//   src: url(/src/assets/static/Inter-SemiBold.ttf) format('ttf');
+//   font-weight: 600;
+// }

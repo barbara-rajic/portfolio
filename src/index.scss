@@ -1,0 +1,52 @@
+@import '/src/styles/variables';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  min-height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 400 'Inter', 'sans-serif';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background: $background-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  border: none;
+}
+
+input:focus,
+button:focus,
+a:focus,
+textarea:focus {
+  outline: none;
+}
+
+section {
+  padding-bottom: 5rem;
+}

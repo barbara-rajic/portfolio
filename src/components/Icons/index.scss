@@ -1,0 +1,37 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.icon {
+  transition: fill 0.3s;
+}
+
+.close-icon,
+.menu-icon {
+  width: 4rem;
+  height: 4rem;
+
+  @include screen(md) {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.close-icon:hover,
+.menu-icon:hover {
+  fill: $gradient3;
+}
+
+.github-icon {
+  height: 1.6em;
+  width: 1.6em;
+  margin-left: 1rem;
+}
+
+.github-icon:hover {
+  animation: pulse;
+  animation-duration: 1s;
+}
+
+.arrow-icon {
+  transform: translateY(25%);
+}

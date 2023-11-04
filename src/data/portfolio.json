@@ -1,0 +1,51 @@
+{
+  "home": {
+    "salute": "Hello there!",
+    "name": "I'm Barbara Rajič",
+    "about": "I love coding, cats and jigsaw puzzles",
+    "btnTitle": "Let's get started!"
+  },
+  "about": {
+    "descriptionTitle": "Get to know me!",
+    "description": "Hey! It's Barbara Rajič and I'm a Frontend Web Developer located in Zagreb. I've done remote projects for agencies, consulted for startups, and collaborated with talented people to createdigital products for both business and consumer use",
+    "skillsTitle": "My Skills",
+    "skillsDescriptiont": ["JavaScript", "CSS", "HTML", "SCSS", "React", "GIT"]
+  },
+  "portfolio": [
+    {
+      "cover": "/assets/imges/portfolio/pingo.png",
+      "title": "PinGo",
+      "description": "PinGo is a workout app designed to help users track their cycling or running activities effortlessly.",
+      "Languages": "Javascript, HTML, SCSS",
+      "url": "https://barbara-rajic.github.io/PinGo/",
+      "repo": "https://github.com/barbara-rajic/PinGo"
+    },
+    {
+      "cover": "/assets/imges/portfolio/budgetary.png",
+      "title": "Budgetary",
+      "description": "Budgetary is a budget management tool that helps you efficiently track and manage your finances.",
+      "Languages": "Javascript, HTML, CSS",
+      "url": "https://barbara-rajic.github.io/Budgetary/",
+      "repo": "https://github.com/barbara-rajic/Budgetary"
+    },
+    {
+      "cover": "/assets/imges/portfolio/travelly.png",
+      "title": "Travelly",
+      "description": "Simple, responsive landing page.",
+      "Languages": "HTML, CSS",
+      "url": "https://barbara-rajic.github.io/Travelly/",
+      "repo": "https://github.com/barbara-rajic/Travelly"
+    },
+    {
+      "cover": "/assets/imges/portfolio/elena-joy.png",
+      "title": "Elena Joy",
+      "description": "This is a simple, responsive landing page for showcasing the photography portfolio of Elena Joy.",
+      "Languages": "HTML, CSS, Javascript",
+      "url": "https://barbara-rajic.github.io/elena-joy/",
+      "repo": "https://github.com/barbara-rajic/elena-joy"
+    }
+  ],
+  "footer": {
+    "url": "https://github.com/barbara-rajic/"
+  }
+}

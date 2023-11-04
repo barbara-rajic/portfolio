@@ -1,0 +1,38 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+#home {
+  .text-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .btn-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .round__btn {
+      margin: 2rem;
+
+      @include screen(sm) {
+        margin: 3.5rem;
+      }
+
+      &:nth-child(1) {
+        align-self: flex-start;
+      }
+
+      &:nth-child(2) {
+        align-self: flex-end;
+      }
+
+      &:nth-child(3) {
+        align-self: flex-start;
+
+        @include screen(sm) {
+          margin-left: 10rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import 'variables';
+
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 0;
+
+    @each $breakpoint-key in map-keys($map: $breakpoints){
+        @include screen($breakpoint-key){
+            max-width: map-get($map:$breakpoints , $key: $breakpoint-key);
+        }
+    }
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: {
+        left: -$gutter;
+        right: -$gutter;
+    };
+
+    > [class^="col-"]{
+        flex: 1 1 auto;
+    }
+
+    @for $i from 1 through 12{
+        .col-#{$i}{
+            width: percentage($i / 12);
+        }
+    }
+
+    @each $breakpoint-key in map-keys($map: $breakpoints){
+        @include screen($breakpoint-key){
+            @for $i from 1 through 12{
+                .col-#{$breakpoint-key}-#{$i}{
+                    width: percentage($i / 12);
+                }
+            }
+        }
+    }
+}
