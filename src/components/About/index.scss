@@ -16,12 +16,8 @@ $radius: 1rem;
 
     &-main {
       display: flex;
-      flex-direction: column;
-
-      @include screen(lg) {
-        flex-direction: row;
-        align-items: center;
-      }
+      flex-wrap: wrap;
+      justify-content: center;
 
       .btn-wrapper {
         @include screen(lg) {
@@ -42,8 +38,11 @@ $radius: 1rem;
 
     &-details {
       .text-primary {
-        text-align: start;
-        line-height: 4rem;
+        line-height: 3rem;
+
+        @include screen(sm) {
+          line-height: 4rem;
+        }
 
         @include screen(lg) {
           line-height: 5rem;

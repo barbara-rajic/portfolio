@@ -13,6 +13,10 @@
   }
 }
 
+.fixed {
+  position: fixed !important;
+}
+
 .round__btn {
   display: inline-block;
   position: relative;
@@ -88,13 +92,13 @@
 
 .heading-primary {
   color: $secondary-color;
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   line-height: 2em;
   text-align: center;
   @include screen(sm) {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
   }
 
   margin-bottom: 2.5rem;

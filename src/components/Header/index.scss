@@ -5,11 +5,18 @@
   box-shadow: $commonBoxShadow;
   margin-bottom: 5rem;
 
-  .header-content {
+  &__content {
     position: relative;
     z-index: 99;
     text-align: left;
     background: $gradient1;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
   }
 
   .menu-link {
@@ -22,9 +29,9 @@
     @include screen(md) {
       margin-left: 8rem;
     }
-  }
 
-  .menu-link:hover {
-    color: $gradient3;
+    &:hover {
+      color: $gradient3;
+    }
   }
 }

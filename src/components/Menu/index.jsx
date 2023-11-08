@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../styles/index.scss';
 import './index.scss';
 
-const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
+const Menu = ({ isSidebarOpen, toggleSidebar }) => {
+  const hasToggled = useRef(false);
+
+  const menuAnimationClass = hasToggled.current
+    ? isSidebarOpen
+      ? 'animate__animated animate__fadeInDownBig'
+      : 'animate__animated animate__fadeOutUpBig'
+    : 'menu__closed';
+
+  if (isSidebarOpen && !hasToggled.current) {
+    hasToggled.current = true;
+  }
+
   return (
-    <div
-      className={`side-bar ${
-        isSidebarOpen
-          ? 'animate__animated animate__fadeInDownBig'
-          : 'animate__animated animate__fadeOutUpBig'
-      }`}
-    >
+    <div className={`menu ${menuAnimationClass}`}>
       <div className="container">
-        {/* <div className="row"> */}
-        {/* <div className="col-12"> */}
         <nav>
           <ul>
             <li>
@@ -76,11 +80,9 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             </li>
           </ul>
         </nav>
-        {/* </div> */}
-        {/* </div> */}
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default Menu;

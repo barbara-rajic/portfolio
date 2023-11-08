@@ -1,8 +1,6 @@
 @import '/src/styles/variables';
 @import '/src/styles/mixins';
 
-$radius: 1rem;
-
 #portfolio {
   .portfolio__content-container {
     padding: 0 2rem;
@@ -15,13 +13,14 @@ $radius: 1rem;
       padding: 0.5rem;
       margin-bottom: 2rem;
       box-shadow: $circleBoxShadow;
-      border-radius: $radius;
+      border-radius: $biggerBorderRadius;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       align-content: space-around;
       gap: 20px;
       width: 100%;
+      min-height: 35rem;
 
       @include screen(md) {
         padding: 2rem;
@@ -42,7 +41,8 @@ $radius: 1rem;
       .portfolio__content-polaroid {
         background: $primary-color;
         padding: 0.5rem;
-        border-radius: $radius;
+        border-radius: $biggerBorderRadius;
+        width: 100%;
 
         @include screen(md) {
           padding: 1.5rem;
@@ -57,13 +57,13 @@ $radius: 1rem;
         position: relative;
         height: 100%;
         padding: 0.2rem;
-        border-radius: $radius;
+        border-radius: $biggerBorderRadius;
 
         img {
           width: 100%;
           height: 100%;
           box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
-          border-radius: $radius;
+          border-radius: $biggerBorderRadius;
           filter: grayscale(70%);
           transition: filter 0.5s ease;
         }
@@ -75,7 +75,7 @@ $radius: 1rem;
 
       .portfolio__content-details {
         padding: 2rem;
-        border-radius: $radius;
+        border-radius: $biggerBorderRadius;
         width: 100%;
 
         .portfolio__content-text-wrapper {

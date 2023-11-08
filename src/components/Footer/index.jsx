@@ -6,7 +6,7 @@ import './index.scss';
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-content">
+      <div className="footer__content">
         <h3 className="footer__content-title">
           Follow me <ArrowIcon />{' '}
           <a

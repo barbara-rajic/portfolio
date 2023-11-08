@@ -15,16 +15,13 @@ const About = () => {
             </h1>
           </div>
           <div className="about__content-main col-12">
-            {/* <h3 className="about__content-title">
-              {aboutData.about.descriptionTitle}
-            </h3> */}
             <div className="about__content-details">
               <p className="text-primary">{aboutData.about.description}</p>
             </div>
             <div className="btn-wrapper">
               <div className="round__btn">
-                <NavLink to="/contact" className="round__btn--text">
-                  Contact
+                <NavLink to="/portfolio" className="round__btn--text">
+                  Portfolio
                 </NavLink>
               </div>
             </div>
@@ -34,13 +31,11 @@ const About = () => {
               {aboutData.about.skillsTitle}
             </h3>
             <div className="skills btn-wrapper">
-                {aboutData.about.skillsDescriptiont.map((skill, index) => (
-                  <div className="skills__skill elipse__btn" key={index}>
-                    <span className="elipse__btn--text">
-                      {skill}
-                    </span>
-                  </div>
-                ))}
+              {aboutData.about.skillsDescriptiont.map((skill, index) => (
+                <div className="skills__skill elipse__btn" key={index}>
+                  <span className="elipse__btn--text">{skill}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,15 +1,20 @@
 @import '/src/styles/variables';
 @import '/src/styles/mixins';
 
-.side-bar {
+.menu {
   background: $background-color;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 100%;
   z-index: 89;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  overflow-y: hidden;
+
+  &__closed {
+    display: none;
+  }
 
   .container {
     height: 100%;
