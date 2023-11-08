@@ -33,6 +33,11 @@
           margin-left: 10rem;
         }
       }
+
+      &:hover {
+        animation: rubberBand;
+        animation-duration: 1s;
+      }
     }
   }
 }

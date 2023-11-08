@@ -1,20 +1,25 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../styles/index.scss';
 import './index.scss';
 
 const Menu = ({ isSidebarOpen, toggleSidebar }) => {
   const hasToggled = useRef(false);
+  const [menuAnimationClass, setMenuAnimationClass] = useState('');
 
-  const menuAnimationClass = hasToggled.current
-    ? isSidebarOpen
-      ? 'animate__animated animate__fadeInDownBig'
-      : 'animate__animated animate__fadeOutUpBig'
-    : 'menu__closed';
+  useEffect(() => {
+    if (isSidebarOpen && !hasToggled.current) {
+      hasToggled.current = true;
+    }
 
-  if (isSidebarOpen && !hasToggled.current) {
-    hasToggled.current = true;
-  }
+    const menuAnimation = hasToggled.current
+      ? isSidebarOpen
+        ? 'animate__animated animate__fadeInDownBig'
+        : 'animate__animated animate__fadeOutUpBig'
+      : 'menu__closed';
+
+    setMenuAnimationClass(menuAnimation);
+  }, [isSidebarOpen]);
 
   return (
     <div className={`menu ${menuAnimationClass}`}>

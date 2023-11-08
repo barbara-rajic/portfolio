@@ -26,13 +26,12 @@ const Portfolio = () => {
                   <div className="portfolio__content-details">
                     <div className="portfolio__content-text-wrapper">
                       <h3 className="text-secondary">
-                        {item.title}{' '}
                         <a
                           href={item.repo}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <GithubIcon />
+                          {item.title} <GithubIcon />
                         </a>
                       </h3>
 
