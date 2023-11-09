@@ -80,8 +80,17 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     if (!validateForm(e.target.elements)) {
+      setUserMessage({
+        message: 'You need to fill all fields!',
+        isError: true,
+      });
       return;
     }
+
+    setUserMessage({
+      message: 'Please wait!',
+      isError: false,
+    });
 
     emailjs
       .sendForm(
@@ -215,160 +224,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-// const validateField = (name, value) => {
-//   let fieldErrors = { ...errors };
-//   let errorMessage = '';
-
-//   switch (name) {
-//     case 'name':
-//       if (!value) {
-//         errorMessage = 'Please enter your name';
-//       }
-//       break;
-//     case 'email':
-//       if (!value) {
-//         errorMessage = 'Please enter your email';
-//       } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
-//         errorMessage = 'Email is not valid';
-//       }
-//       break;
-//     case 'message':
-//       if (!value) {
-//         errorMessage = 'Please enter your message';
-//       }
-//       break;
-//     default:
-//       break;
-//   }
-
-//   if (errorMessage) {
-//     fieldErrors[name] = errorMessage;
-//   } else {
-//     delete fieldErrors[name];
-//   }
-
-//   setErrors(fieldErrors);
-// };
-
-// const handleBlur = (event) => {
-//   const { name, value } = event.target;
-//   validateField(name, value);
-// };
-
-// const validateForm = (elements) => {
-//   let errors = {};
-//   let formIsValid = true;
-
-//   if (!elements.name.value) {
-//     formIsValid = false;
-//     errors['name'] = 'Please enter your name';
-//   }
-
-//   if (!elements.email.value) {
-//     formIsValid = false;
-//     errors['email'] = 'Please enter your email';
-//   } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(elements.email.value)) {
-//     formIsValid = false;
-//     errors['email'] = 'Email is not valid';
-//   }
-
-//   if (!elements.message.value) {
-//     formIsValid = false;
-//     errors['message'] = 'Please enter your message';
-//   }
-
-//   setErrors(errors);
-//   return formIsValid;
-// };
-
-// const sendEmail = (e) => {
-//   e.preventDefault();
-
-//   if (!validateForm(e.target.elements)) {
-//     return;
-//   }
-
-//   emailjs
-//     .sendForm(
-//       process.env.REACT_APP_EMAILJS_SERVICE_ID,
-//       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-//       e.target,
-//       process.env.REACT_APP_EMAILJS_USER_ID
-//     )
-//     .then(
-//       (result) => {
-//         console.log(result.text);
-//       },
-//       (error) => {
-//         console.log(error.text);
-//       }
-//     );
-// };
-
-// <section id="contact">
-//   <div className="container">
-//     <div className="row">
-//       <div className="col-12">
-//         <h1 className="heading-secondary">
-//           <span className="heading-secondary-main">Contact</span>
-//         </h1>
-//       </div>
-//       <div className="col-12">
-//         <div className="contact__form-container">
-//           <form className="contact__form" onSubmit={sendEmail}>
-//             <div className="contact__form-field">
-//               <label className="contact__form-label" htmlFor="name">
-//                 Name
-//               </label>
-//               <input
-//                 required
-//                 placeholder="Enter Your Name"
-//                 type="text"
-//                 className="contact__form-input"
-//                 name="name"
-//                 id="name"
-//               />
-//             </div>
-//             <div className="contact__form-field">
-//               <label className="contact__form-label" htmlFor="email">
-//                 Email
-//               </label>
-//               <input
-//                 required
-//                 type="email"
-//                 placeholder="Enter Your Email"
-//                 className="contact__form-input"
-//                 name="email"
-//                 id="email"
-//               />
-//             </div>
-//             <div className="contact__form-field">
-//               <label className="contact__form-label" htmlFor="message">
-//                 Message
-//               </label>
-//               <textarea
-//                 required
-//                 cols="30"
-//                 rows="10"
-//                 className="contact__form-input"
-//                 placeholder="Enter Your Message"
-//                 name="message"
-//                 id="message"
-//               ></textarea>
-//             </div>
-//             <div className="contact__form-btn-wrapper">
-//               <button
-//                 type="submit"
-//                 className={`elipse__btn ${buttonAnimation}`}
-//                 onClick={triggerAnimation}
-//               >
-//                 <span className="elipse__btn--text">Submit</span>
-//               </button>
-//             </div>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </section>
