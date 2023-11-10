@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import portfolioData from '../../data/portfolio.json';
 import { GithubIcon } from '../Icons';
 import '../../styles/index.scss';
 import './index.scss';
+import useAnimationOnInView from '../../hooks/useAnimationOnInView';
 
 const Portfolio = () => {
+  const contentWrapperRefs = useRef([]);
+
+  useAnimationOnInView(contentWrapperRefs, { threshold: 0.1 });
+
   return (
     <section id="portfolio">
       <div className="container">
@@ -17,7 +22,11 @@ const Portfolio = () => {
           <div className="col-12">
             <div className="portfolio__content-container">
               {portfolioData.portfolio.map((item, index) => (
-                <div className="portfolio__content-wrapper" key={index}>
+                <div
+                  className="portfolio__content-wrapper"
+                  key={index}
+                  ref={(el) => (contentWrapperRefs.current[index] = el)}
+                >
                   <div className="portfolio__content-polaroid">
                     <div className="portfolio__content-img">
                       <img src={item.cover} alt={item.title} />

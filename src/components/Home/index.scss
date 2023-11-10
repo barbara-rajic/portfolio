@@ -6,6 +6,12 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+
+    .heading-secondary-main {
+      &::after {
+        background-color: transparent;
+      }
+    }
   }
   .btn-wrapper {
     display: flex;

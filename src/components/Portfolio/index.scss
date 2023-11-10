@@ -21,6 +21,7 @@
       gap: 20px;
       width: 100%;
       min-height: 35rem;
+      background: linear-gradient(to top, $gradient1, $offWhite);
 
       @include screen(md) {
         padding: 2rem;
@@ -30,12 +31,14 @@
         flex-wrap: nowrap;
         width: 90%;
         margin-bottom: 5rem;
-      }
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+          background: linear-gradient(to right, $gradient1, $offWhite);
+        }
 
-      @include gradient-bg($orangeShadow, $greyShadow, $yellowShadow);
-
-      &:nth-child(even) {
-        flex-direction: row-reverse;
+        &:nth-child(odd) {
+          background: linear-gradient(to left, $gradient1, $offWhite);
+        }
       }
 
       .portfolio__content-polaroid {

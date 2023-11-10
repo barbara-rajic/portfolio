@@ -8,20 +8,19 @@ const Contact = () => {
   const [buttonAnimation, setButtonAnimation] = useState('');
   const [userMessageAnimation, setUserMessageAnimation] = useState('');
 
-  const triggerAnimation = () => {
+  const triggerButtonAnimation = () => {
     setButtonAnimation('animate__animated animate__rubberBand');
-    setTimeout(() => {
-      setButtonAnimation('');
-    }, 1000);
+  };
 
-    setUserMessageAnimation('animate__animated fadeInDown');
-    setTimeout(() => {
+  const triggerUserMessageAnimation = (start) => {
+    if (start) {
+      setUserMessageAnimation('animate__animated fadeInDown');
+    } else {
       setUserMessageAnimation('animate__animated animate__fadeOut');
-    }, 3500);
+    }
   };
 
   /* Validation */
-
   const [errors, setErrors] = useState({});
 
   const validate = (name, value) => {
@@ -72,6 +71,7 @@ const Contact = () => {
   };
 
   /* Handle Submit */
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [userMessage, setUserMessage] = useState({
     message: '',
     isError: false,
@@ -79,18 +79,26 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    triggerButtonAnimation();
+
     if (!validateForm(e.target.elements)) {
       setUserMessage({
-        message: 'You need to fill all fields!',
+        message: 'Please ensure all fields are filled out correctly!',
         isError: true,
       });
+      triggerUserMessageAnimation(true);
+      setTimeout(() => {
+        triggerUserMessageAnimation(false);
+      }, 2000);
       return;
     }
 
+    setIsSubmitting(true);
     setUserMessage({
       message: 'Please wait!',
       isError: false,
     });
+    triggerUserMessageAnimation(true);
 
     emailjs
       .sendForm(
@@ -116,7 +124,14 @@ const Contact = () => {
             isError: true,
           });
         }
-      );
+      )
+      .finally(() => {
+        setTimeout(() => {
+          triggerUserMessageAnimation(false);
+          setIsSubmitting(false);
+          setButtonAnimation('');
+        }, 2000);
+      });
   };
 
   return (
@@ -209,7 +224,8 @@ const Contact = () => {
                   <button
                     type="submit"
                     className={`elipse__btn ${buttonAnimation}`}
-                    onClick={triggerAnimation}
+                    // onClick={triggerAnimation}
+                    disabled={isSubmitting}
                   >
                     <span className="elipse__btn--text">Submit</span>
                   </button>
