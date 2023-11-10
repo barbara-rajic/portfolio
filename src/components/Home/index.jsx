@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import useAnimationFrame from '../../hooks/useAnimationFrame';
 
 const Home = () => {
+  // Button animation
   const [animatedButton, setAnimatedButton] = useState(0);
   const [elapsedTime, setElapsedTime] = useState(0);
 
