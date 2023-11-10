@@ -22,6 +22,7 @@
       width: 100%;
       min-height: 35rem;
       background: linear-gradient(to top, $gradient1, $offWhite);
+      opacity: 0;
 
       @include screen(md) {
         padding: 2rem;
